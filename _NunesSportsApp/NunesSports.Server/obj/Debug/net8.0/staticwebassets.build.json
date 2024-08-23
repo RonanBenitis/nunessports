@@ -1,0 +1,23 @@
+{
+  "Version": 1,
+  "Hash": "tf4OsjO+iceGxru5+oUCYcd5q3+5/q3feww9ZjUyWfU=",
+  "Source": "NunesSports.Server",
+  "BasePath": "_content/NunesSports.Server",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [
+    {
+      "Identity": "D:\\Users\\ronan\\Desktop\\teste everymind\\nunes_sports\\_NunesSportsApp\\nunessports.client\\nunessports.client.esproj",
+      "Version": 2,
+      "Source": "nunessports.client",
+      "GetPublishAssetsTargets": "GetCurrentProjectPublishStaticWebAssetItems",
+      "AdditionalPublishProperties": "",
+      "AdditionalPublishPropertiesToRemove": "WebPublishProfileFile;TargetFramework;RuntimeIdentifier;SelfContained",
+      "GetBuildAssetsTargets": "GetCurrentProjectBuildStaticWebAssetItems",
+      "AdditionalBuildProperties": "",
+      "AdditionalBuildPropertiesToRemove": "WebPublishProfileFile;TargetFramework;RuntimeIdentifier;SelfContained"
+    }
+  ],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("NunesSports.Server")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+16f5a746f5416a0b7d00213b43075d7c54f97e82")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+89ae14fb526cc70fcc2bf3e70b40ba961b9ccad0")]
 [assembly: System.Reflection.AssemblyProductAttribute("NunesSports.Server")]
 [assembly: System.Reflection.AssemblyTitleAttribute("NunesSports.Server")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
