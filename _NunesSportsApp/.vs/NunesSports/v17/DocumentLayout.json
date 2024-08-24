@@ -1,12 +1,71 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "D:\\Users\\ronan\\Desktop\\teste everymind\\nunes_sports\\_NunesSportsApp\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{0F61A287-4179-453E-B7C9-E09B5672DF8F}|NunesSports.Server\\NunesSports.Server.csproj|d:\\users\\ronan\\desktop\\teste everymind\\nunes_sports\\_nunessportsapp\\nunessports.server\\controllers\\produtocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F61A287-4179-453E-B7C9-E09B5672DF8F}|NunesSports.Server\\NunesSports.Server.csproj|solutionrelative:nunessports.server\\controllers\\produtocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F61A287-4179-453E-B7C9-E09B5672DF8F}|NunesSports.Server\\NunesSports.Server.csproj|d:\\users\\ronan\\desktop\\teste everymind\\nunes_sports\\_nunessportsapp\\nunessports.server\\services\\interfaces\\icrudservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F61A287-4179-453E-B7C9-E09B5672DF8F}|NunesSports.Server\\NunesSports.Server.csproj|solutionrelative:nunessports.server\\services\\interfaces\\icrudservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F61A287-4179-453E-B7C9-E09B5672DF8F}|NunesSports.Server\\NunesSports.Server.csproj|d:\\users\\ronan\\desktop\\teste everymind\\nunes_sports\\_nunessportsapp\\nunessports.server\\controllers\\abscontrollerbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F61A287-4179-453E-B7C9-E09B5672DF8F}|NunesSports.Server\\NunesSports.Server.csproj|solutionrelative:nunessports.server\\controllers\\abscontrollerbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 292,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ICrudService.cs",
+              "DocumentMoniker": "D:\\Users\\ronan\\Desktop\\teste everymind\\nunes_sports\\_NunesSportsApp\\NunesSports.Server\\Services\\Interfaces\\ICrudService.cs",
+              "RelativeDocumentMoniker": "NunesSports.Server\\Services\\Interfaces\\ICrudService.cs",
+              "ToolTip": "D:\\Users\\ronan\\Desktop\\teste everymind\\nunes_sports\\_NunesSportsApp\\NunesSports.Server\\Services\\Interfaces\\ICrudService.cs",
+              "RelativeToolTip": "NunesSports.Server\\Services\\Interfaces\\ICrudService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAsAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-24T16:17:34.553Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AbsControllerBase.cs",
+              "DocumentMoniker": "D:\\Users\\ronan\\Desktop\\teste everymind\\nunes_sports\\_NunesSportsApp\\NunesSports.Server\\Controllers\\AbsControllerBase.cs",
+              "RelativeDocumentMoniker": "NunesSports.Server\\Controllers\\AbsControllerBase.cs",
+              "ToolTip": "D:\\Users\\ronan\\Desktop\\teste everymind\\nunes_sports\\_NunesSportsApp\\NunesSports.Server\\Controllers\\AbsControllerBase.cs",
+              "RelativeToolTip": "NunesSports.Server\\Controllers\\AbsControllerBase.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-24T13:04:51.334Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ProdutoController.cs",
+              "DocumentMoniker": "D:\\Users\\ronan\\Desktop\\teste everymind\\nunes_sports\\_NunesSportsApp\\NunesSports.Server\\Controllers\\ProdutoController.cs",
+              "RelativeDocumentMoniker": "NunesSports.Server\\Controllers\\ProdutoController.cs",
+              "ToolTip": "D:\\Users\\ronan\\Desktop\\teste everymind\\nunes_sports\\_NunesSportsApp\\NunesSports.Server\\Controllers\\ProdutoController.cs",
+              "RelativeToolTip": "NunesSports.Server\\Controllers\\ProdutoController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-24T16:16:39.191Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }

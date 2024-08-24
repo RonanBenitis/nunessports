@@ -1,6 +1,8 @@
-﻿namespace NunesSports.Server.Models
+﻿using NunesSports.Server.Models.Interface;
+
+namespace NunesSports.Server.Models
 {
-    public class Produto
+    public class Produto : IId
     {
         public int Id { get; set; }
         public string Nome { get; set; }
