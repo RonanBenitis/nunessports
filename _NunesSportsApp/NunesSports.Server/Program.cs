@@ -1,8 +1,13 @@
 using Microsoft.EntityFrameworkCore;
 using Npgsql.EntityFrameworkCore.PostgreSQL;
 using NunesSports.Server.Data;
+using NunesSports.Server.Services;
+using NunesSports.Server.Services.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
+
+// Adicionando ICrud e Crud no container de serviços
+builder.Services.AddScoped(typeof(ICrudService<>), typeof(CrudService<>));
 
 // Add services to the container.
 builder.Services.AddControllers();
@@ -10,7 +15,6 @@ builder.Services.AddControllers();
 // Add DbContext to PostgreSQL
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
-
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
