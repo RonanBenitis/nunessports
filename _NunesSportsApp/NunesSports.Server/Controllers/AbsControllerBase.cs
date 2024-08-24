@@ -44,6 +44,7 @@ namespace NunesSports.Server.Controllers
             return Ok(entity);
         }
 
+        [HttpPut("{id}")]
         public virtual async Task<IActionResult> Update(int id, T entity)
         {
             if (id != entity.Id) return BadRequest();
