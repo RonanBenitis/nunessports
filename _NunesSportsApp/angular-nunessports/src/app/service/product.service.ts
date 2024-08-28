@@ -12,6 +12,6 @@ export class ProductService extends AbstractService<any> {
   }
 
   protected getEndpoint(): string {
-      return "/produto";
+      return "/produtos";
   }
 }
