@@ -42,15 +42,15 @@
 
 <!-- Alertas -->
 <div class="alert alert-success" role="alert" id="add-success-alert">
-    Inspection succedully added!
+    Produto adicionado com sucesso!
   </div>
   
   <div class="alert alert-success" role="alert" id="update-success-alert">
-    Inspection succedully updated!
+    Produto editado com sucesso!
   </div>
   
   <div class="alert alert-success" role="alert"id="delete-success-alert">
-    Inspection succedully deleted!
+    Produto deletado com sucesso!
   </div>
 
 <!-- Modal para adicionar ou editar produto -->
@@ -63,7 +63,7 @@
             (click)="modalClose()" id="add-edit-modal-close"></button>
         </div>
         <div class="modal-body">
-          <app-add-edit-product *ngIf="activateAddEditProductComponent"></app-add-edit-product>
+          <app-add-edit-product [product]="product" *ngIf="activateAddEditProductComponent"></app-add-edit-product>
         </div>
       </div>
     </div>

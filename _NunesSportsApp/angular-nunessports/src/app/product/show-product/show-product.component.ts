@@ -13,6 +13,7 @@ export class ShowProductComponent {
   
   constructor(private prodService:ProductService) { }
 
+  // >>>>> MÉTODOS INTERNOS
   private successAlert(elementId:any, time:number) {
     if(elementId) {
       elementId.style.display = "block";
@@ -25,20 +26,16 @@ export class ShowProductComponent {
     }, time)
   }
 
-  private productListRefresh() {
-    this.productList$ = this.prodService.getAll();
-  }
-
-
   ngOnInit(): void {
     this.productList$ = this.prodService.getAll();
   }
 
-  // Propriedades
+  // >>>>>> PROPRIEDADES
   modalTitle:string = '';
   activateAddEditProductComponent:boolean = false;
   product:any;
 
+  // >>>>> MÉTODOS DE MANIPULAÇÃO
   modalAdd() {
     this.product = {
       id: 0,
@@ -53,7 +50,8 @@ export class ShowProductComponent {
 
   modalClose() {
     this.activateAddEditProductComponent = false;
-    this.productListRefresh();
+
+    this.productList$ = this.prodService.getAll();
   }
 
   modalEdit(item:any) {
@@ -67,7 +65,8 @@ export class ShowProductComponent {
       this.prodService.delete(item.id).subscribe(res => {
         var showDeleteSuccess = document.getElementById('delete-success-alert');
         this.successAlert(showDeleteSuccess, 4000);
-        this.productListRefresh();
+
+        this.productList$ = this.prodService.getAll();
       })
     }
   }
