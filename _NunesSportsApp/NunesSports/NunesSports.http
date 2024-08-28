@@ -1,0 +1,6 @@
+@NunesSports_HostAddress = http://localhost:5237
+
+GET {{NunesSports_HostAddress}}/api/
+Accept: application/json
+
+###
