@@ -1,6 +1,7 @@
 .table-wrapper {
     height: 75vh;
     width: 75vw;
+    min-width: 100%;
     background-color: blue;
     border-radius: 30px;
     margin: 5px;

@@ -3,12 +3,16 @@
   "WorkspaceRootPath": "D:\\Users\\ronan\\Desktop\\teste everymind\\nunes_sports\\_NunesSportsApp\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{BBEDA012-53F2-4562-B63D-726B0BE0A7C2}|NunesSports\\NunesSports.csproj|d:\\users\\ronan\\desktop\\teste everymind\\nunes_sports\\_nunessportsapp\\nunessports\\models\\produto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BBEDA012-53F2-4562-B63D-726B0BE0A7C2}|NunesSports\\NunesSports.csproj|solutionrelative:nunessports\\models\\produto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BBEDA012-53F2-4562-B63D-726B0BE0A7C2}|NunesSports\\NunesSports.csproj|d:\\users\\ronan\\desktop\\teste everymind\\nunes_sports\\_nunessportsapp\\nunessports\\controllers\\produtoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BBEDA012-53F2-4562-B63D-726B0BE0A7C2}|NunesSports\\NunesSports.csproj|solutionrelative:nunessports\\controllers\\produtoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BBEDA012-53F2-4562-B63D-726B0BE0A7C2}|NunesSports\\NunesSports.csproj|d:\\users\\ronan\\desktop\\teste everymind\\nunes_sports\\_nunessportsapp\\nunessports\\data\\datacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BBEDA012-53F2-4562-B63D-726B0BE0A7C2}|NunesSports\\NunesSports.csproj|solutionrelative:nunessports\\data\\datacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BBEDA012-53F2-4562-B63D-726B0BE0A7C2}|NunesSports\\NunesSports.csproj|d:\\users\\ronan\\desktop\\teste everymind\\nunes_sports\\_nunessportsapp\\nunessports\\controllers\\abstraction\\abscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BBEDA012-53F2-4562-B63D-726B0BE0A7C2}|NunesSports\\NunesSports.csproj|solutionrelative:nunessports\\controllers\\abstraction\\abscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BBEDA012-53F2-4562-B63D-726B0BE0A7C2}|NunesSports\\NunesSports.csproj|d:\\users\\ronan\\desktop\\teste everymind\\nunes_sports\\_nunessportsapp\\nunessports\\models\\produto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BBEDA012-53F2-4562-B63D-726B0BE0A7C2}|NunesSports\\NunesSports.csproj|solutionrelative:nunessports\\models\\produto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,32 +22,46 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "Produto.cs",
               "DocumentMoniker": "D:\\Users\\ronan\\Desktop\\teste everymind\\nunes_sports\\_NunesSportsApp\\NunesSports\\Models\\Produto.cs",
               "RelativeDocumentMoniker": "NunesSports\\Models\\Produto.cs",
               "ToolTip": "D:\\Users\\ronan\\Desktop\\teste everymind\\nunes_sports\\_NunesSportsApp\\NunesSports\\Models\\Produto.cs",
               "RelativeToolTip": "NunesSports\\Models\\Produto.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAABAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAbAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-28T01:57:50.213Z",
+              "WhenOpened": "2024-08-29T14:59:59.977Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "DataContext.cs",
-              "DocumentMoniker": "D:\\Users\\ronan\\Desktop\\teste everymind\\nunes_sports\\_NunesSportsApp\\NunesSports\\Data\\DataContext.cs",
-              "RelativeDocumentMoniker": "NunesSports\\Data\\DataContext.cs",
-              "ToolTip": "D:\\Users\\ronan\\Desktop\\teste everymind\\nunes_sports\\_NunesSportsApp\\NunesSports\\Data\\DataContext.cs",
-              "RelativeToolTip": "NunesSports\\Data\\DataContext.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAAAAAAA",
+              "Title": "AbsController.cs",
+              "DocumentMoniker": "D:\\Users\\ronan\\Desktop\\teste everymind\\nunes_sports\\_NunesSportsApp\\NunesSports\\Controllers\\Abstraction\\AbsController.cs",
+              "RelativeDocumentMoniker": "NunesSports\\Controllers\\Abstraction\\AbsController.cs",
+              "ToolTip": "D:\\Users\\ronan\\Desktop\\teste everymind\\nunes_sports\\_NunesSportsApp\\NunesSports\\Controllers\\Abstraction\\AbsController.cs",
+              "RelativeToolTip": "NunesSports\\Controllers\\Abstraction\\AbsController.cs",
+              "ViewState": "AQIAAD4AAAAAAAAAAAAIwEsAAAA5AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-28T01:46:59.69Z"
+              "WhenOpened": "2024-08-29T14:54:27.908Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ProdutosController.cs",
+              "DocumentMoniker": "D:\\Users\\ronan\\Desktop\\teste everymind\\nunes_sports\\_NunesSportsApp\\NunesSports\\Controllers\\ProdutosController.cs",
+              "RelativeDocumentMoniker": "NunesSports\\Controllers\\ProdutosController.cs",
+              "ToolTip": "D:\\Users\\ronan\\Desktop\\teste everymind\\nunes_sports\\_NunesSportsApp\\NunesSports\\Controllers\\ProdutosController.cs",
+              "RelativeToolTip": "NunesSports\\Controllers\\ProdutosController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAAyAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-29T14:54:17.392Z",
+              "EditorCaption": ""
             }
           ]
         }

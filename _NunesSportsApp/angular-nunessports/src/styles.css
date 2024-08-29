@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:wght@400;600&display=swap');
+
 * {
 	box-sizing: border-box;
 }
@@ -27,11 +29,7 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
-body {
-	line-height: 1;
-    font-family: 'Montserrat', sans-serif;
-    min-height: 100vh;
-}
+
 ol, ul {
 	list-style: none;
 }
@@ -89,6 +87,14 @@ select {
 	font-size: inherit;
 	font-weight: inherit;
 	font-family: inherit;
+}
+
+body {
+	line-height: 1;
+    font-family: 'Montserrat', sans-serif;
+    min-height: 100vh;
+    /* background: linear-gradient(115deg, #0f1222 30%,#8783ce 95%,#bc94ca 100%); */
+    background: linear-gradient(115deg, #ffffff 30%,#8783ce 95%,#bc94ca 100%);
 }
 
 h1 {

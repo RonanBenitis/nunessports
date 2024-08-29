@@ -22,7 +22,7 @@ namespace NunesSports.Controllers.Abstraction
 
         // GET: api/[controller]
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<T>>> GetAll()
+        public virtual async Task<ActionResult<IEnumerable<T>>> GetAll()
         {
             return await _dbSet.ToListAsync();
         }
@@ -43,7 +43,7 @@ namespace NunesSports.Controllers.Abstraction
 
         // PUT: api/[controller]/5
         [HttpPut("{id}")]
-        public async Task<IActionResult> Update(int id, T entity)
+        public virtual async Task<IActionResult> Update(int id, T entity)
         {
             if (id != entity.Id)
             {
@@ -73,7 +73,7 @@ namespace NunesSports.Controllers.Abstraction
 
         // POST: api/[controller]
         [HttpPost]
-        public async Task<ActionResult<T>> Create(T entity)
+        public virtual async Task<ActionResult<T>> Create(T entity)
         {
             _dbSet.Add(entity);
             await _context.SaveChangesAsync();
@@ -83,7 +83,7 @@ namespace NunesSports.Controllers.Abstraction
 
         // DELETE: api/[controller]/5
         [HttpDelete("{id}")]
-        public async Task<IActionResult> Delete(int id)
+        public virtual async Task<IActionResult> Delete(int id)
         {
             var entity = await _dbSet.FindAsync(id);
             if (entity == null)
