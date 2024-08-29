@@ -33,6 +33,18 @@ export class AddEditProductComponent {
     }, time)
   }
 
+  // Reverter formatação
+  /*
+  * Importante realizar dessa forma, pois com a formatação
+  * renderiza-se R$##.###,##, mas no console retorna ##,###.
+  * Dessa maneira garantimos que recebamos o valor como ####.##
+  */
+  private removeFormatting(value: string): number {
+    const numericValue = value.replace(/\D/g, '');
+    const formattedValue = parseFloat(numericValue) / 100;
+    return parseFloat(formattedValue.toFixed(2));
+  }
+
   // >>>>> PROPRIEDADES
   @Input() product:any;
   id: number = 0;
@@ -40,6 +52,7 @@ export class AddEditProductComponent {
   nome: string="";
   descricao: string="";
   preco!: number;
+  precoForms!: string;
   
   // >>>>> MÉTODOS DE MANIPULAÇÃO
   ngOnInit(): void{
@@ -48,19 +61,19 @@ export class AddEditProductComponent {
     this.nome = this.product.nome;
     this.descricao = this.product.descricao;
     this.preco = this.product.preco;
+    this.precoForms = this.product.preco;
     
     this.productList$ = this.prodService.getAll();
   }
 
-  // TODO Após build funcional, transformar em POO
   addProduct() {
     var product = {
       codigo: this.codigo,
       nome: this.nome,
       descricao: this.descricao,
-      preco: this.preco
+      preco: this.removeFormatting(this.precoForms)
     }
-
+    console.log(product.preco);
     this.prodService.add(product).subscribe(res => {
       this.fechaModalAddEdit();
 

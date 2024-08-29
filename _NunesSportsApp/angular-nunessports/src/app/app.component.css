@@ -1,0 +1,7 @@
+.main-table {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    background: linear-gradient(115deg, #0f1222 30%,#8783ce 95%,#bc94ca 100%);
+}

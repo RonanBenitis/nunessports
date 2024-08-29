@@ -6,27 +6,30 @@
         <!-- Input Código quando EDIÇÃO -->
         <input type="text" class="form-control-plaintext" name="codigo"
         [(ngModel)]="codigo" *ngIf="product.codigo!=null" readonly>
-        <input type="text" class="form-control" name="codigo"
+        <input type="text" appUppercase class="form-control" name="codigo" 
             [(ngModel)]="codigo" *ngIf="product.codigo==null" required>
     </div>
     <!-- Campo NOME -->
     <div class="mb-3">
         <label for="nome" class="form-label">Nome</label>
-        <input type="text" class="form-control" name="nome"
+        <input type="text" appUppercase class="form-control" name="nome"
             [(ngModel)]="nome" required>
     </div>
     <!-- Campo DESCRICAO -->
     <div class="mb-3">
         <label for="descricao" class="form-label">Descrição</label>
-        <input type="text" class="form-control" name="descricao"
+        <input type="text" appUppercase class="form-control" name="descricao"
             [(ngModel)]="descricao">
     </div>
     <!-- Campo PREÇO -->
-     <div class="mb-3">
-        <label for="preco" class="form-label">Preço</label>
-        <input type="text" class="form-control" name="preco"
-            [(ngModel)]="preco">
-     </div>
+     <div class="input-group mb-3 mt-4">
+        <label for="preco" class="form-label me-3 mt-1">Preço</label>
+        <span class="input-group-text">R$</span>
+        <!-- Aqui não pode ser type="number", pois estamos formatando com diretiva -->
+        <input type="text"  class="form-control" name="preco"
+            appCurrencyFormatterDirective
+            [(ngModel)]="precoForms">
+      </div>
 
      <!-- Botão caso EDIÇÃO -->
      <button class="btn btn-primary" *ngIf="product.codigo!=null"

@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("NunesSports")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bfe126c67d9ecf205173f3b63de664bcbd142c87")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a772d5c9df3df77b571489b66e86e45602de1120")]
 [assembly: System.Reflection.AssemblyProductAttribute("NunesSports")]
 [assembly: System.Reflection.AssemblyTitleAttribute("NunesSports")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
