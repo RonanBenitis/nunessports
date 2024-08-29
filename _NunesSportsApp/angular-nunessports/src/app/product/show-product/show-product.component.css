@@ -2,10 +2,25 @@
     height: 75vh;
     width: 75vw;
     min-width: 100%;
-    background-color: blue;
+    background-color: #004bad75;
     border-radius: 30px;
     margin: 5px;
     overflow-y: auto;
+}
+
+.template-vazio {
+    color: #ffffffab;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 80%;
+    gap: 10px;
+}
+
+.template-vazio p {
+    text-align: center;
 }
 
 th, td {

@@ -14,7 +14,7 @@ namespace NunesSports.Data
             base.OnModelCreating(modelBuilder);
 
             modelBuilder.Entity<Produto>()
-                .HasIndex(p => p.Nome)
+                .HasIndex(p => p.Codigo)
                 .IsUnique();
         }
     }

@@ -27,9 +27,9 @@ namespace NunesSports.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Produtos_Nome",
+                name: "IX_Produtos_Codigo",
                 table: "Produtos",
-                column: "Nome",
+                column: "Codigo",
                 unique: true);
         }
 

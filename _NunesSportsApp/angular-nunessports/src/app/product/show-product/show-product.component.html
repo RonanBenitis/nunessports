@@ -1,6 +1,9 @@
 <!-- Trigger do modal para adição de produto -->
 <button type="button" class="btn btn-success float-end m-2" data-bs-toggle="modal" data-bs-target="#staticBackdrop"
     (click)="modalAdd()">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
+      <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3z"/>
+    </svg>
     Adicionar Produto
 </button>
 
@@ -42,8 +45,17 @@
         </tr>
       </tbody>
   </table>
+  
+  <!-- Template alternativo -->
+    <div class="template-vazio"
+    *ngIf="(productList$ | async)?.length == 0">
+      <p>NENHUM PRODUTO LANÇADO!</p>
+      <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
+        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3z"/>
+      </svg>
+      <p>ACRESCENTE ALGUM PRODUTO EM "ADICIONAR PRODUTO"</p>
+    </div>
 </div>
-
 
 <!-- Alertas -->
 <div class="alert alert-success" role="alert" id="add-success-alert">

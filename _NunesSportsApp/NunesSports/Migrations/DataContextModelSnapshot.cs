@@ -41,7 +41,7 @@ namespace NunesSports.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("Nome")
+                    b.HasIndex("Codigo")
                         .IsUnique();
 
                     b.ToTable("Produtos");

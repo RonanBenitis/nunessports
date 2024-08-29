@@ -10,7 +10,7 @@ using NunesSports.Data;
 namespace NunesSports.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20240828015823_InitialCreate")]
+    [Migration("20240829175944_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -44,7 +44,7 @@ namespace NunesSports.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("Nome")
+                    b.HasIndex("Codigo")
                         .IsUnique();
 
                     b.ToTable("Produtos");
