@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ProductService } from '../../service/product.service';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-add-edit-product',
@@ -9,6 +10,8 @@ import { ProductService } from '../../service/product.service';
 })
 export class AddEditProductComponent {
   productList$!: Observable<any[]>;
+  errorMessage: any;
+
   
   constructor(private prodService:ProductService) { }
 
@@ -21,7 +24,7 @@ export class AddEditProductComponent {
     }
   }
 
-  private successAlert(elementId:any, time:number) {
+  private showAndDropAlert(elementId:any, time:number) {
     if(elementId) {
       elementId.style.display = "block";
     }
@@ -66,6 +69,20 @@ export class AddEditProductComponent {
     this.productList$ = this.prodService.getAll();
   }
 
+  onSubmit(form: NgForm) {
+    if (form.valid) {
+      if (this.product.codigo != null) {
+        this.updateProduct();
+      } else {
+        this.addProduct();
+      }
+    } else {
+      Object.keys(form.controls).forEach(controlName => {
+        form.controls[controlName].markAsTouched();
+      })
+    }
+  }
+
   addProduct() {
     var product = {
       codigo: this.codigo,
@@ -74,15 +91,25 @@ export class AddEditProductComponent {
       preco: this.removeFormatting(this.precoForms)
     }
     console.log(product.preco);
-    this.prodService.add(product).subscribe(res => {
-      this.fechaModalAddEdit();
+    this.prodService.add(product).subscribe({
+      next: (res) => {
+        this.fechaModalAddEdit();
 
-      var showAddSuccess = document.getElementById('add-success-alert');
-      this.successAlert(showAddSuccess, 4000);
+        var showAddSuccess = document.getElementById('add-success-alert');
+        this.showAndDropAlert(showAddSuccess, 4000);
+      },
+      error: (e) => {
+        this.errorMessage = e;
+
+        var showErrorAlert = document.getElementById('error-alert');
+        if(showErrorAlert) {
+          showErrorAlert.style.display = "block";
+        }
+      }
     });
   }
 
-  updateInspection() {
+  updateProduct() {
     var product = {
       id: this.id,
       codigo: this.codigo,
@@ -97,7 +124,7 @@ export class AddEditProductComponent {
       this.fechaModalAddEdit();
 
       var showAddSuccess = document.getElementById('update-success-alert');
-      this.successAlert(showAddSuccess, 4000);
+      this.showAndDropAlert(showAddSuccess, 4000);
     })
   }
 }

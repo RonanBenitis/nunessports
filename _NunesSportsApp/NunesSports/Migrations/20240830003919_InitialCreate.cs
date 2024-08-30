@@ -31,6 +31,12 @@ namespace NunesSports.Migrations
                 table: "Produtos",
                 column: "Codigo",
                 unique: true);
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Produtos_Nome",
+                table: "Produtos",
+                column: "Nome",
+                unique: true);
         }
 
         /// <inheritdoc />

@@ -1,0 +1,11 @@
+.ast-verm {
+    color: red;
+}
+
+.alert {
+    border: none;
+}
+
+#error-alert {
+    display: none;
+}

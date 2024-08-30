@@ -44,6 +44,9 @@ namespace NunesSports.Migrations
                     b.HasIndex("Codigo")
                         .IsUnique();
 
+                    b.HasIndex("Nome")
+                        .IsUnique();
+
                     b.ToTable("Produtos");
                 });
 #pragma warning restore 612, 618

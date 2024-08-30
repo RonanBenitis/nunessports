@@ -15,6 +15,7 @@ import { CurrencyFormatterDirectiveDirective } from './directive/currency-format
 import ptBr from '@angular/common/locales/pt';
 import { registerLocaleData } from '@angular/common';
 import { GifPlayerDirective } from './directive/gif-player.directive';
+import { RequiredCustomDirective } from './directive/required-custom.directive';
 
 registerLocaleData(ptBr);
 
@@ -26,7 +27,8 @@ registerLocaleData(ptBr);
     AddEditProductComponent,
     UppercaseDirective,
     CurrencyFormatterDirectiveDirective,
-    GifPlayerDirective
+    GifPlayerDirective,
+    RequiredCustomDirective
   ],
   imports: [
     BrowserModule,

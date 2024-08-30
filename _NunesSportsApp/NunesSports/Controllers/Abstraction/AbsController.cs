@@ -1,7 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Data.Sqlite;
 using Microsoft.EntityFrameworkCore;
 using NunesSports.Controllers.Interface;
 using NunesSports.Models;
@@ -75,10 +77,44 @@ namespace NunesSports.Controllers.Abstraction
         [HttpPost]
         public virtual async Task<ActionResult<T>> Create(T entity)
         {
-            _dbSet.Add(entity);
-            await _context.SaveChangesAsync();
+            try
+            {
+                _dbSet.Add(entity);
+                await _context.SaveChangesAsync();
 
-            return CreatedAtAction(nameof(GetById), new { id = entity.Id }, entity);
+                return CreatedAtAction(nameof(GetById), new { id = entity.Id }, entity);
+            }
+            catch(DbUpdateException ex)
+            {
+                // Verifica se a exceção é do tipo SqliteException e inicializa SqliteException
+                if (ex.InnerException is SqliteException sqliteException)
+                {
+                    if (sqliteException.SqliteErrorCode == 19)
+                    {
+                        var message = sqliteException.Message;
+
+                        // Tenta extrair o nome do campo da mensagem de erro
+                        string fieldName = "unknown field";
+                        string tableName = "unknown table";
+                        // Caputando tabela e campo
+                        var match = Regex.Match(message, @"UNIQUE constraint failed: (\w+)\.(\w+)");
+
+                        if (match.Success)
+                        {
+                            tableName = match.Groups[1].Value;
+                            fieldName = match.Groups[2].Value;
+                        }
+
+                        return BadRequest(new
+                        {
+                            message = $"O valor do campo '{fieldName}' é UNIQUE e já foi cadastrado.",
+                            table = tableName,
+                            field = fieldName
+                        });
+                    }
+                }
+                return StatusCode(500, new { message = "Erro ao processar a solicitação " });
+            }
         }
 
         // DELETE: api/[controller]/5

@@ -10,6 +10,7 @@ import { ProductService } from '../../service/product.service';
 export class ShowProductComponent {
   
   productList$!:Observable<any[]>;
+  connectionError:boolean = false;
   
   constructor(private prodService:ProductService) { }
 
@@ -26,8 +27,18 @@ export class ShowProductComponent {
     }, time)
   }
 
-  ngOnInit(): void {
+  private refeshProductList() {
     this.productList$ = this.prodService.getAll();
+    // Verifica conexão com o banco
+    this.prodService.getAll().subscribe({
+      error: (e) => {
+        this.connectionError = true;
+      }
+    });
+  }
+
+  ngOnInit(): void {
+    this.refeshProductList();
   }
 
   // >>>>>> PROPRIEDADES
@@ -51,7 +62,7 @@ export class ShowProductComponent {
   modalClose() {
     this.activateAddEditProductComponent = false;
 
-    this.productList$ = this.prodService.getAll();
+    this.refeshProductList();
   }
 
   modalEdit(item:any) {
@@ -66,7 +77,7 @@ export class ShowProductComponent {
         var showDeleteSuccess = document.getElementById('delete-success-alert');
         this.successAlert(showDeleteSuccess, 4000);
 
-        this.productList$ = this.prodService.getAll();
+        this.refeshProductList();
       })
     }
   }

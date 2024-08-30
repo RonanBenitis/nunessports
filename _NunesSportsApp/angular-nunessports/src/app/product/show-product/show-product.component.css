@@ -1,11 +1,23 @@
 .table-wrapper {
-    height: 75vh;
+    height: 70vh;
     width: 75vw;
     min-width: 100%;
     background-color: #004bad75;
     border-radius: 30px;
     margin: 5px;
     overflow-y: auto;
+}
+
+.alert {
+    width: 35vw;
+    margin-left: 45px;
+    margin-bottom: 0px;
+    padding: 10px;
+    border: none;
+}
+
+.alert-success {
+    background-color: lime;
 }
 
 .template-vazio {
