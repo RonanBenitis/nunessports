@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ProductService } from '../../service/product.service';
 import { NgForm } from '@angular/forms';
+import { Product } from '../../models/product.model';
 
 @Component({
   selector: 'app-add-edit-product',
@@ -11,9 +12,22 @@ import { NgForm } from '@angular/forms';
 export class AddEditProductComponent {
   productList$!: Observable<any[]>;
   errorMessage: any;
+  @Input()product: Product = new Product();
+  productCodeCollected!:string | null;
+  precoForms!: string;
 
-  
   constructor(private prodService:ProductService) { }
+
+  // >>>>> INICIALIZAÇÃO
+  ngOnInit(): void{
+    this.productCodeCollected = this.product.codigo;
+
+    if(this.product.preco) {
+      this.precoForms = this.product.preco.toString();
+    }
+    
+    this.productList$ = this.prodService.getAll();
+  }
 
   // >>>>> MÉTODOS INTERNOS
   private fechaModalAddEdit() {
@@ -47,31 +61,11 @@ export class AddEditProductComponent {
     const formattedValue = parseFloat(numericValue) / 100;
     return parseFloat(formattedValue.toFixed(2));
   }
-
-  // >>>>> PROPRIEDADES
-  @Input() product:any;
-  id: number = 0;
-  codigo: string="";
-  nome: string="";
-  descricao: string="";
-  preco!: number;
-  precoForms!: string;
   
   // >>>>> MÉTODOS DE MANIPULAÇÃO
-  ngOnInit(): void{
-    this.id = this.product.id;
-    this.codigo = this.product.codigo;
-    this.nome = this.product.nome;
-    this.descricao = this.product.descricao;
-    this.preco = this.product.preco;
-    this.precoForms = this.product.preco;
-    
-    this.productList$ = this.prodService.getAll();
-  }
-
   onSubmit(form: NgForm) {
     if (form.valid) {
-      if (this.product.codigo != null) {
+      if (this.product && this.product.codigo) {
         this.updateProduct();
       } else {
         this.addProduct();
@@ -84,13 +78,14 @@ export class AddEditProductComponent {
   }
 
   addProduct() {
-    var product = {
-      codigo: this.codigo,
-      nome: this.nome,
-      descricao: this.descricao,
-      preco: this.removeFormatting(this.precoForms)
-    }
-    console.log(product.preco);
+    const product = new Product(
+      0, // Id 0 ativa o autoincremento
+      this.productCodeCollected,
+      this.product.nome,
+      this.product.descricao,
+      this.removeFormatting(this.precoForms)
+    );
+    console.log(product);
     this.prodService.add(product).subscribe({
       next: (res) => {
         this.fechaModalAddEdit();
@@ -110,17 +105,15 @@ export class AddEditProductComponent {
   }
 
   updateProduct() {
-    var product = {
-      id: this.id,
-      codigo: this.codigo,
-      nome: this.nome,
-      descricao: this.descricao,
-      preco: this.preco
-    }
-    
-    var id:number = this.id;
+    const product = new Product(
+      this.product.id,
+      this.product.codigo,
+      this.product.nome,
+      this.product.descricao,
+      this.removeFormatting(this.precoForms)
+    );
 
-    this.prodService.update(id, product).subscribe(res => {
+    this.prodService.update(product.id!, product).subscribe(res => {
       this.fechaModalAddEdit();
 
       var showAddSuccess = document.getElementById('update-success-alert');

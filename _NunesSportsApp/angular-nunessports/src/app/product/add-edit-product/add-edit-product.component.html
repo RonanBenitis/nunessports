@@ -5,22 +5,22 @@
         <label for="codigo" class="form-label">Código <span class="ast-verm">*</span></label>
         <!-- Input Código quando EDIÇÃO -->
         <input type="text" class="form-control-plaintext" name="codigo"
-            [(ngModel)]="codigo" *ngIf="product.codigo!=null" readonly>
+            [(ngModel)]="productCodeCollected" *ngIf="product.codigo!=null" readonly>
         <input type="text" appUppercase required appRequiredCustom class="form-control" name="codigo" 
-            [(ngModel)]="codigo" errorMessage="Código obrigatório" *ngIf="product.codigo==null">
+            [(ngModel)]="productCodeCollected" errorMessage="Código obrigatório" *ngIf="product.codigo==null">
     
     </div>
     <!-- Campo NOME -->
     <div class="mb-3">
         <label for="nome" class="form-label">Nome <span class="ast-verm">*</span></label>
         <input type="text" appUppercase required appRequiredCustom class="form-control" name="nome"
-            [(ngModel)]="nome" errorMessage="Nome obrigatório">
+            [(ngModel)]="product.nome" errorMessage="Nome obrigatório">
     </div>
     <!-- Campo DESCRICAO -->
     <div class="mb-3">
         <label for="descricao" class="form-label">Descrição</label>
         <input type="text" appUppercase class="form-control" name="descricao"
-            [(ngModel)]="descricao">
+            [(ngModel)]="product.descricao">
     </div>
     <!-- Campo PREÇO -->
      <div class="input-group mb-3 mt-4">

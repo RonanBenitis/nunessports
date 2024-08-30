@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ProductService } from '../../service/product.service';
+import { Product } from '../../models/product.model';
 
 @Component({
   selector: 'app-show-product',
@@ -8,11 +9,18 @@ import { ProductService } from '../../service/product.service';
   styleUrl: './show-product.component.css'
 })
 export class ShowProductComponent {
-  
   productList$!:Observable<any[]>;
   connectionError:boolean = false;
+  product!:Product;
+  modalTitle:string = '';
+  activateAddEditProductComponent:boolean = false;
   
   constructor(private prodService:ProductService) { }
+
+    // >>>>> INICIALIZAÇÃO
+    ngOnInit(): void {
+      this.refeshProductList();
+    }
 
   // >>>>> MÉTODOS INTERNOS
   private successAlert(elementId:any, time:number) {
@@ -37,24 +45,9 @@ export class ShowProductComponent {
     });
   }
 
-  ngOnInit(): void {
-    this.refeshProductList();
-  }
-
-  // >>>>>> PROPRIEDADES
-  modalTitle:string = '';
-  activateAddEditProductComponent:boolean = false;
-  product:any;
-
   // >>>>> MÉTODOS DE MANIPULAÇÃO
   modalAdd() {
-    this.product = {
-      id: 0,
-      codigo: null,
-      nome: null,
-      descricao: null,
-      preco: null
-    }
+    this.product = new Product();
     this.modalTitle = "Adicionar Produto";
     this.activateAddEditProductComponent = true;
   }
