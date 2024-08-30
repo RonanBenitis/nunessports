@@ -1,0 +1,52 @@
+<form #myForm="ngForm" (ngSubmit)="onSubmit(myForm)">
+    <!-- Campo CODIGO -->
+    <div class="mb-3">
+        <!-- Label para ADIÇÃO/EDIÇÃO código -->
+        <label for="codigo" class="form-label">Código <span class="ast-verm">*</span></label>
+        <!-- Input Código quando EDIÇÃO -->
+        <input type="text" class="form-control-plaintext" name="codigo"
+            [(ngModel)]="productCodeCollected" *ngIf="product.codigo!=null" readonly>
+        <input type="text" appUppercase required appRequiredCustom class="form-control" name="codigo" 
+            [(ngModel)]="productCodeCollected" errorMessage="Código obrigatório" *ngIf="product.codigo==null">
+    
+    </div>
+    <!-- Campo NOME -->
+    <div class="mb-3">
+        <label for="nome" class="form-label">Nome <span class="ast-verm">*</span></label>
+        <input type="text" appUppercase required appRequiredCustom class="form-control" name="nome"
+            [(ngModel)]="product.nome" errorMessage="Nome obrigatório">
+    </div>
+    <!-- Campo DESCRICAO -->
+    <div class="mb-3">
+        <label for="descricao" class="form-label">Descrição</label>
+        <input type="text" appUppercase class="form-control" name="descricao"
+            [(ngModel)]="product.descricao">
+    </div>
+    <!-- Campo PREÇO -->
+     <div class="input-group mb-3 mt-4">
+        <label for="preco" class="form-label me-3 mt-1">Preço <span class="ast-verm">*</span></label>
+        <span class="input-group-text">R$</span>
+        <!-- Aqui não pode ser type="number", pois estamos formatando com diretiva -->
+        <input type="text"  class="form-control" name="preco"
+            appCurrencyFormatterDirective required appRequiredCustom
+            [(ngModel)]="precoForms" errorMessage="Preço obrigatório">
+      </div>
+      
+      <!-- Alertas -->
+      <div class="alert alert-danger" role="alert" id="error-alert">
+        {{ errorMessage }}
+        <!-- <ul>
+            <li *ngFor="let error of errorMessage"> {{ error }}</li>
+        </ul> -->
+      </div>
+
+     <!-- Botão caso EDIÇÃO -->
+     <button type="submit" class="btn btn-success" *ngIf="product.codigo!=null">
+         Editar
+     </button>
+     <!-- Botão caso ADIÇÃO -->
+     <button type="submit" class="btn btn-success" *ngIf="product.codigo==null">
+        Adicionar
+    </button>
+    
+</form>

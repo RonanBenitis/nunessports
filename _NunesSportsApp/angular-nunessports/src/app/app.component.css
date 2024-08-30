@@ -1,0 +1,19 @@
+.navbar {
+    justify-content: center !important;
+    margin-bottom: 15px;
+}
+
+.bg-light{
+    background-color: #004aad !important;
+    /* background-color: #ffffff !important; */
+}
+
+.white-bar {
+    background-color: #ffffff;
+    width: 100vw;
+    height: 5px;
+}
+
+nav a img {
+    width: 125px;
+}

@@ -1,0 +1,98 @@
+<!-- Trigger do modal para adição de produto -->
+<button type="button" class="btn btn-success float-end m-2" data-bs-toggle="modal" data-bs-target="#staticBackdrop"
+    (click)="modalAdd()">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
+      <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3z"/>
+    </svg>
+    Adicionar Produto
+</button>
+
+<!-- Alertas -->
+<div class="alert alert-success" role="alert" id="add-success-alert">
+  Produto adicionado com sucesso!
+</div>
+
+<div class="alert alert-success" role="alert" id="update-success-alert">
+  Produto editado com sucesso!
+</div>
+
+<div class="alert alert-success" role="alert"id="delete-success-alert">
+  Produto deletado com sucesso!
+</div>
+
+<!-- Tabela renderizada -->
+<div class="table-wrapper">
+  <table class="table table-striped table-hover">
+      <thead>
+        <tr>
+          <th scope="col">CÓDIGO</th>
+          <th scope="col">NOME</th>
+          <th scope="col">DESCRIÇÃO</th>
+          <th scope="col">PREÇO</th>
+          <th scope="col">AÇÕES</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of productList$ | async">
+          <td scope="row">{{ item.codigo }}</td>
+          <td>{{ item.nome }}</td>
+          <td>{{ item.descricao}}</td>
+          <td>{{ item.preco | currency:'BRL':'R$':'1.2-2' }}</td>
+          <!-- Botões de ação por linha -->
+          <td>
+            <button class="btn btn-outline-primary me-2 mb-1" data-bs-toggle="modal" data-bs-target="#staticBackdrop"
+            (click)="modalEdit(item)">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z"/>
+              </svg>
+            </button>
+            <button class="btn btn-outline-danger me-2 mb-1"
+            (click)="delete(item)">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+                <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"/>
+                <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"/>
+              </svg>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+  </table>
+  
+  <!-- Verifica se há um erro de conexão -->
+  <div class="template-vazio"
+    *ngIf="connectionError">
+    <p>ERRO AO CONECTAR AO BANCO DE DADOS!</p>
+    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-exclamation-triangle-fill" viewBox="0 0 16 16">
+      <path d="M7.938 2.016a.13.13 0 0 1 .124 0l6.857 3.988c.12.07.19.194.19.33v7.986c0 .136-.07.26-.19.33l-6.857 3.988a.13.13 0 0 1-.124 0l-6.857-3.988A.376.376 0 0 1 1 14.32V6.333c0-.136.07-.26.19-.33l6.748-3.987zm0 4.684a.678.678 0 1 0-1.357 0 .678.678 0 0 0 1.357 0zm.472 4.867c-.293.293-.68.433-1.057.433s-.764-.14-1.057-.433a1.49 1.49 0 0 1 0-2.114c.293-.293.68-.433 1.057-.433s.764.14 1.057.433c.293.293.433.68.433 1.057s-.14.764-.433 1.057z"/>
+    </svg>
+    <p>Verifique se o banco está conectado e recarregue esta pagina.</p>
+  </div>
+
+  <!-- Template alternativo -->
+  <div class="template-vazio"
+    *ngIf="(productList$ | async)?.length == 0">
+      <p>NENHUM PRODUTO LANÇADO!</p>
+      <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
+        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3z"/>
+      </svg>
+      <p>Acrescente algum produto em "Adicionar Produto"</p>
+  </div>
+
+</div>
+
+<!-- Modal para adicionar ou editar produto -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="staticBackdropLabel">{{modalTitle}}</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+            (click)="modalClose()" id="add-edit-modal-close"></button>
+        </div>
+        <div class="modal-body">
+          <app-add-edit-product [product]="product" *ngIf="activateAddEditProductComponent"></app-add-edit-product>
+        </div>
+      </div>
+    </div>
+  </div>
