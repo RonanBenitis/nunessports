@@ -87,11 +87,7 @@ O frontend estará disponível em [http://localhost:4200](http://localhost:4200/
 
 
 ## Construção do projeto
-<div style="display: flex; justify-content: center; align-items: center;">
-  <div style="background-color: #004aad; height: 200px; width: 300px;"></div>
-  <img width="200px" src="asset_readme/logo.png" alt="Logo">
-  <div style="background-color: #004aad; height: 200px; width: 300px;"></div>
-</div>
+<img src="asset_readme/logo.png" alt="Logo">
 
 ### Indice
 - [Sobre o projeto](#sobre-o-projeto)
