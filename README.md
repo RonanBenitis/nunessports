@@ -1,6 +1,6 @@
 <h1 align="center">Aplicação: Nunes Sports</h1>
 
-![tela inicial preenchida](asset_readme\nunessports_telapreenchida.png)
+![tela inicial preenchida](asset_readme/nunessports_telapreenchida.png)
 
 ## Sobre o projeto
 Este projeto é um sistema de gerenciamento de produtos vendidos. Ele foi construído utilizando .NET 8.0 no backend e Angular 18.2 no frontend, com SQLite como banco de dados. A escolha do banco de dados em SQLite tem como objetivo facilitar na distribuição a quem for testar a aplicação, porém, comenda-se a utilização de ferramentas mais robustas como PostgreSQL.
